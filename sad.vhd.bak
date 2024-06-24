@@ -1,0 +1,64 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.SAD_Package.all;
+
+entity SAD is
+    Port ( CLK : in STD_LOGIC;
+           RST : in STD_LOGIC;
+           start_signal : in STD_LOGIC;
+           done_signal : out STD_LOGIC;
+           sad : out STD_LOGIC_VECTOR (31 downto 0);
+           memA_addr : out STD_LOGIC_VECTOR(5 downto 0);
+           memB_addr : out STD_LOGIC_VECTOR(5 downto 0);
+           memSAD_addr : out STD_LOGIC_VECTOR(5 downto 0);
+           memA_data : in STD_LOGIC_VECTOR(7 downto 0);
+           memB_data : in STD_LOGIC_VECTOR(7 downto 0);
+           memSAD_data : out STD_LOGIC_VECTOR(31 downto 0);
+           memA_ren : out STD_LOGIC;
+           memB_ren : out STD_LOGIC;
+           memSAD_wen : out STD_LOGIC);
+end SAD;
+
+architecture Behavioral of SAD is
+    signal enable : STD_LOGIC;
+    signal calc_done : STD_LOGIC;
+    signal count : integer;
+    signal sad_internal : STD_LOGIC_VECTOR(31 downto 0);
+begin
+    U1: entity work.Datapath
+        Port map ( CLK => CLK,
+                   RST => RST,
+                   enable => enable,
+                   memA_Dout => memA_data,
+                   memB_Dout => memB_data,
+                   SAD_out => sad_internal,
+                   calc_done => calc_done);
+
+    U2: entity work.Controller
+        Port map ( CLK => CLK,
+                   RST => RST,
+                   start_signal => start_signal,
+                   cnt => count,
+                   calc_done => calc_done,
+                   done_signal => done_signal,
+                   enable => enable);
+
+    U3: entity work.Counter
+        Port map ( CLK => CLK,
+                   RST => RST,
+                   enable => enable,
+                   count => count);
+
+    -- Gán các tín hi?u giao di?n b? nh?
+    memA_addr <= std_logic_vector(to_unsigned(count, 6));
+    memB_addr <= std_logic_vector(to_unsigned(count, 6));
+    memSAD_addr <= (others => '0');
+    memA_ren <= '1' when enable = '1' else '0';
+    memB_ren <= '1' when enable = '1' else '0';
+    memSAD_wen <= '1' when calc_done = '1' else '0';
+    memSAD_data <= sad_internal when calc_done = '1' else (others => '0');
+    
+    sad <= sad_internal;
+end Behavioral;
+

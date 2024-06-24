@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.SAD_Package.all;
+
+entity Datapath is
+    Port ( CLK : in STD_LOGIC;
+           RST : in STD_LOGIC;
+           enable : in STD_LOGIC;
+           memA_Dout : in STD_LOGIC_VECTOR(7 downto 0);
+           memB_Dout : in STD_LOGIC_VECTOR(7 downto 0);
+           SAD_out : out STD_LOGIC_VECTOR(31 downto 0);
+           calc_done : out STD_LOGIC);
+end Datapath;
+
+architecture Behavioral of Datapath is
+    signal A, B : signed(7 downto 0);
+    signal diff : signed(31 downto 0);
+    signal sum : signed(31 downto 0) := (others => '0');
+    signal cnt : integer range 0 to size := 0;
+begin
+    process(CLK, RST)
+    begin
+        if RST = '1' then
+            cnt <= 0;
+            sum <= (others => '0');
+            calc_done <= '0';
+        elsif rising_edge(CLK) then
+            if enable = '1' then
+                if cnt < size then
+                    A <= signed(memA_Dout);
+                    B <= signed(memB_Dout);
+                    diff <= abs(A - B);
+                    sum <= sum + diff;
+                    cnt <= cnt + 1;
+                else
+                    calc_done <= '1';
+                    SAD_out <= std_logic_vector(sum);
+                end if;
+            end if;
+        end if;
+    end process;
+end Behavioral;
+

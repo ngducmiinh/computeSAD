@@ -1,0 +1,99 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.SAD_Package.all;
+
+entity sad_tb is
+end sad_tb;
+
+architecture behavior of sad_tb is
+    signal clk : std_logic := '0';
+    signal rst : std_logic := '0';
+    signal start_signal : std_logic := '0';
+    signal done_signal : std_logic := '0';
+    signal sad : std_logic_vector(31 downto 0);
+    signal memA_addr : std_logic_vector(5 downto 0);
+    signal memB_addr : std_logic_vector(5 downto 0);
+    signal memSAD_addr : std_logic_vector(5 downto 0);
+    signal memA_data : std_logic_vector(7 downto 0);
+    signal memB_data : std_logic_vector(7 downto 0);
+    signal memSAD_data : std_logic_vector(31 downto 0);
+    signal memA_ren : std_logic;
+    signal memB_ren : std_logic;
+    signal memSAD_wen : std_logic;
+
+    constant CLK_PERIOD : time := 100 ns;
+
+    -- D? li?u ki?m tra cho ma tr?n 1x1
+    constant test_data_A : std_logic_vector(7 downto 0) := std_logic_vector(to_signed(5, 8));
+    constant test_data_B : std_logic_vector(7 downto 0) := std_logic_vector(to_signed(3, 8));
+
+begin
+
+    -- Kh?i t?o UUT (Unit Under Test)
+    uut: entity work.SAD
+        Port map (
+            clk => clk,
+            rst => rst,
+            start_signal => start_signal,
+            done_signal => done_signal,
+            sad => sad,
+            memA_addr => memA_addr,
+            memB_addr => memB_addr,
+            memSAD_addr => memSAD_addr,
+            memA_data => memA_data,
+            memB_data => memB_data,
+            memSAD_data => memSAD_data,
+            memA_ren => memA_ren,
+            memB_ren => memB_ren,
+            memSAD_wen => memSAD_wen
+        );
+
+    -- T?o xung clock
+    clk_process : process
+    begin
+        while true loop
+            clk <= '0';
+            wait for CLK_PERIOD / 2;
+            clk <= '1';
+            wait for CLK_PERIOD / 2;
+        end loop;
+    end process;
+
+    -- Mô ph?ng ??c b? nh?
+    mem_read_process : process
+    begin
+        wait until rising_edge(clk);
+        if memA_ren = '1' then
+            memA_data <= test_data_A;  -- Access the correct element
+        end if;
+        if memB_ren = '1' then
+            memB_data <= test_data_B;  -- Access the correct element
+        end if;
+    end process;
+
+    -- Trình t? ki?m tra
+    simulation : process
+    begin
+        -- Reset
+        rst <= '1';
+        wait for CLK_PERIOD * 10;  -- ??m b?o reset ?? dài
+        rst <= '0';
+        
+        -- B?t ??u tính toán
+        wait for CLK_PERIOD * 2;  -- ??i vài chu k? clock tr??c khi b?t ??u
+        start_signal <= '1';
+        wait for CLK_PERIOD;
+        start_signal <= '0';
+
+        -- ??i quá trình tính toán hoàn thành
+        wait until done_signal = '1';
+        
+        -- Hi?n th? k?t qu?
+        report "SAD = " & integer'image(to_integer(signed(sad)));
+        
+        wait;
+    end process;
+
+end architecture behavior;
+

@@ -1,0 +1,375 @@
+m255
+K4
+z2
+!s11e vcom 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/modeltech64_2020.4/examples/SAD
+Ecomputesad
+Z0 w1719242739
+Z1 DPx4 work 11 sad_package 0 22 fGAGen``NWJYVU3dbTfjd2
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 227
+Z5 dC:/modeltech64_2020.4/examples/computeSAD
+Z6 8C:/modeltech64_2020.4/examples/computeSAD/sad.vhd
+Z7 FC:/modeltech64_2020.4/examples/computeSAD/sad.vhd
+l0
+L6 1
+V7P0?aJU=UzVJAd^VT6;jm0
+!s100 GzR@e0L[zSQMdHKl]^JmK0
+Z8 OL;C;2020.4;71
+32
+Z9 !s110 1719242808
+!i10b 1
+Z10 !s108 1719242807.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/sad.vhd|
+Z12 !s107 C:/modeltech64_2020.4/examples/computeSAD/sad.vhd|
+!i113 0
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+R4
+DEx4 work 10 computesad 0 22 7P0?aJU=UzVJAd^VT6;jm0
+!i122 227
+l26
+L18 60
+V_hASA<LL^OUPIN9IG5Sg?1
+!s100 mX3^QJ9H8]Yo5ozJk<m@m1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Econtroller
+Z15 w1719242762
+R2
+R3
+R4
+!i122 226
+R5
+Z16 8C:/modeltech64_2020.4/examples/computeSAD/controller.vhd
+Z17 FC:/modeltech64_2020.4/examples/computeSAD/controller.vhd
+l0
+L5 1
+VmK@=<:XNoR<:`9GPH92n^0
+!s100 eQMU0XE4PkR@@7C743ILG0
+R8
+32
+Z18 !s110 1719242807
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/controller.vhd|
+Z20 !s107 C:/modeltech64_2020.4/examples/computeSAD/controller.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+DEx4 work 10 controller 0 22 mK@=<:XNoR<:`9GPH92n^0
+!i122 226
+l20
+L17 38
+VB;nCR>?Ha4SOaAL[zGfW80
+!s100 [GLn[QD=8DOXLKzgcR<SZ1
+R8
+32
+R18
+!i10b 1
+R10
+R19
+R20
+!i113 0
+R13
+R14
+Ecounter
+Z21 w1719242750
+R2
+R3
+R4
+!i122 225
+R5
+Z22 8C:/modeltech64_2020.4/examples/computeSAD/counter.vhd
+Z23 FC:/modeltech64_2020.4/examples/computeSAD/counter.vhd
+l0
+L5 1
+VWzhXYY=GkJ<;G4D16dPCc0
+!s100 ]80SMUJ_I2>PY<bJl98jR1
+R8
+32
+R18
+!i10b 1
+R10
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/counter.vhd|
+Z25 !s107 C:/modeltech64_2020.4/examples/computeSAD/counter.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+DEx4 work 7 counter 0 22 WzhXYY=GkJ<;G4D16dPCc0
+!i122 225
+l16
+L14 19
+V0fedgJ;@4b1Z2@8id=M0Q2
+!s100 l5o1zLSeRm^`bg9LLoAU>2
+R8
+32
+R18
+!i10b 1
+R10
+R24
+R25
+!i113 0
+R13
+R14
+Edatapath
+Z26 w1719242801
+R2
+R3
+R4
+!i122 224
+R5
+Z27 8C:/modeltech64_2020.4/examples/computeSAD/datapath.vhd
+Z28 FC:/modeltech64_2020.4/examples/computeSAD/datapath.vhd
+l0
+L5 1
+VD<OW`kmPaA9K@^Q8QzA_S0
+!s100 3hmR5A1cg8`gLn2M2^FP42
+R8
+32
+R18
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/datapath.vhd|
+Z30 !s107 C:/modeltech64_2020.4/examples/computeSAD/datapath.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 D<OW`kmPaA9K@^Q8QzA_S0
+!i122 224
+l18
+L16 15
+VNfBg4XM_F14:Vz7@H171Y0
+!s100 5SKQFM5H:7Tz`T<C0lK?i1
+R8
+32
+R18
+!i10b 1
+R10
+R29
+R30
+!i113 0
+R13
+R14
+Ememory
+Z31 w1719242702
+R2
+R3
+R4
+!i122 229
+R5
+Z32 8C:/modeltech64_2020.4/examples/computeSAD/mem.vhd
+Z33 FC:/modeltech64_2020.4/examples/computeSAD/mem.vhd
+l0
+L5 1
+Vc`UCh@7YGkiQV0oKCX:gL1
+!s100 hG@L8OW]R?V:d;C=?=C^[2
+R8
+32
+R9
+!i10b 1
+Z34 !s108 1719242808.000000
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/mem.vhd|
+Z36 !s107 C:/modeltech64_2020.4/examples/computeSAD/mem.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R2
+R3
+R4
+DEx4 work 6 memory 0 22 c`UCh@7YGkiQV0oKCX:gL1
+!i122 229
+l20
+L17 16
+Vm=E5gYDnTUOmjIlong]4Z2
+!s100 1PkKK2FTOOFo>ANc=CB6I1
+R8
+32
+R9
+!i10b 1
+R34
+R35
+R36
+!i113 0
+R13
+R14
+Esad
+Z37 w1719211378
+Z38 DPx4 work 11 sad_package 0 22 Gd253oE<m^4KKJ@LP>HTA2
+R2
+R3
+R4
+!i122 219
+R5
+R6
+R7
+l0
+L6 1
+V9UI942IBPbS[>cP65lnD61
+!s100 Z_MTog=Tb::L=8d``dDHf0
+R8
+32
+Z39 !s110 1719211568
+!i10b 1
+Z40 !s108 1719211568.000000
+R11
+R12
+!i113 0
+R13
+R14
+Abehavioral
+DEx4 work 7 counter 0 22 >;UFRRmL_Q=B@HR_D1FKz0
+DEx4 work 10 controller 0 22 ]oNi`;fd_ZjEL=0dIahf30
+DEx4 work 8 datapath 0 22 j`WbP[K1Vm1`[7SAdTjG71
+R38
+R2
+R3
+R4
+Z41 DEx4 work 3 sad 0 22 9UI942IBPbS[>cP65lnD61
+!i122 219
+l28
+L23 41
+V^3;l:VhbS>]?d@ETb9J>Q1
+!s100 7[B4cFRINGY1Qm32n7]T10
+R8
+32
+R39
+!i10b 1
+R40
+R11
+R12
+!i113 0
+R13
+R14
+Psad_package
+R2
+R3
+R4
+!i122 223
+w1719242720
+R5
+8C:/modeltech64_2020.4/examples/computeSAD/lib.vhd
+FC:/modeltech64_2020.4/examples/computeSAD/lib.vhd
+l0
+L5 1
+VfGAGen``NWJYVU3dbTfjd2
+!s100 [6>MHLB54n@RgD3mNbmFN3
+R8
+32
+R18
+!i10b 1
+R10
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/lib.vhd|
+!s107 C:/modeltech64_2020.4/examples/computeSAD/lib.vhd|
+!i113 0
+R13
+R14
+Esad_tb
+Z42 w1719242789
+R1
+R2
+R3
+R4
+!i122 228
+R5
+Z43 8C:/modeltech64_2020.4/examples/computeSAD/sad_tb.vhd
+Z44 FC:/modeltech64_2020.4/examples/computeSAD/sad_tb.vhd
+l0
+L6 1
+VFeTSJ<470L:T4SXAi;ndB3
+!s100 XNXKUI1o[F3_V45h1WZ190
+R8
+32
+R9
+!i10b 1
+R34
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/modeltech64_2020.4/examples/computeSAD/sad_tb.vhd|
+Z46 !s107 C:/modeltech64_2020.4/examples/computeSAD/sad_tb.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R1
+R2
+R3
+R4
+DEx4 work 6 sad_tb 0 22 FeTSJ<470L:T4SXAi;ndB3
+!i122 228
+l50
+L9 129
+VNF<gzmLzS2OT_m0bJTZzb1
+!s100 ]cga7z5L47T1lXS:J;GAm3
+R8
+32
+R9
+!i10b 1
+R34
+R45
+R46
+!i113 0
+R13
+R14
+Abehavior
+R41
+R38
+R2
+R3
+R4
+DEx4 work 6 sad_tb 0 22 6Z:[liY`5I8e?lh57mem43
+!i122 220
+l31
+L9 90
+Ve`zXd8nCzQBglC]G1`oIU1
+!s100 Vda@@8:^SP[;n]dR@Fcfe0
+R8
+32
+R39
+!i10b 1
+R40
+R45
+R46
+!i113 0
+R13
+R14
+w1719211561
+Tsad_tb_opt
+!s110 1719242830
+VGoYN78oWOLL[n`4bll0G@2
+04 6 10 work sad_tb behavioral 1
+o+acc
+tCvgOpt 0
+nsad_tb_opt
+OL;O;2020.4;71

@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.SAD_Package.all;
+
+entity Counter is
+    Port ( CLK : in STD_LOGIC;
+           RST : in STD_LOGIC;
+           enable : in STD_LOGIC;
+           count : out integer);
+end Counter;
+
+architecture Behavioral of Counter is
+    signal cnt : integer := 0;
+begin
+    process(CLK, RST)
+    begin
+        if RST = '1' then
+            cnt <= 0;
+        elsif rising_edge(CLK) then
+            if enable = '1' then
+                cnt <= cnt + 1;
+            end if;
+        end if;
+    end process;
+    count <= cnt;
+end Behavioral;
+
